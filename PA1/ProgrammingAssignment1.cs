@@ -10,10 +10,15 @@ namespace PA1
     {
         abstract class Animal
         {
-            private string animalName;
-            private int animalAge;
-            private string animalNoise;
-            private int animalWeight;
+            protected string animalName;
+            protected int animalAge;
+            protected string animalNoise;
+            protected int animalWeight;
+
+            public Animal()
+            {
+
+            }
 
             public abstract void printInfo();
             public abstract void makeNoise();
@@ -36,38 +41,29 @@ namespace PA1
             {
                 return animalNoise;
             }
-
-            public void setName()
+            public int getWeight()
             {
-                animalName = Console.ReadLine();
-            }
-            public void setNoise()
-            {
-                animalNoise = Console.ReadLine();
+                return animalWeight;
             }
 
-            public void setAge()
-            {
-                int a = Console.ReadLine();
-                animalAge = Convert.ToInt32(a);
-
-            }
-
-            public void setWeight()
-            {
-                int b = Console.ReadLine();
-                animalWeight = Convert.ToInt32(b);
-            }
         }
 
         class Cat : Animal
         {
+            public Cat (string animalName, int animalAge, string animalNoise, int animalWeight)
+            { 
+                this.animalAge = animalAge;
+                this.animalName = animalName;
+                this.animalNoise = animalNoise;
+                this.animalWeight = animalWeight;
+            }
 
             public override void printInfo()
             {
+                Console.WriteLine(getName());
                 Console.WriteLine(getAge());
                 Console.WriteLine(getNoise());
-                Console.WriteLine(getName());
+                Console.WriteLine(getWeight());
             }
             public override void makeNoise()
             {
@@ -99,22 +95,14 @@ namespace PA1
                 ageIncrement();
             }
         }
+
         static void Main(string[] args)
         {
-            Animal bigWorld = new Animal();
-            List<bigWorld> zoo = new List<bigWorld>();
+            List<Animal> zoo = new List<Animal>();
 
-            Cat newCat = new Cat()
-            zoo.Add(newCat);
-            newCat.setAge();
-            newCat.setName();
-            newCat.setNoise();
-            newCat.setWeight();
-
-            newCat.printInfo();
-
-            Console.WriteLine(zoo[0]);
-            Console.ReadKey();
+            zoo.Add(new Cat("Bill", 12, "meow", 10));
+            zoo[0].printInfo();
+           Console.ReadKey();
         }
     }
 }
