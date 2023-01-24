@@ -1,4 +1,9 @@
-﻿using System;
+﻿//Ethan Buchanan
+//CSCI 352
+//1/23/22
+//PA1 - Getting in to C# Animal Classes
+
+using System;
 using System.Collections.Generic;
 
 namespace PA1
