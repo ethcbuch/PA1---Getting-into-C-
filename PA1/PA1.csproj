@@ -44,7 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProgrammingAssignment1.Animal.cs" />
+    <Compile Include="ProgrammingAssignment1.Cassowary.cs" />
+    <Compile Include="ProgrammingAssignment1.Cat.cs" />
     <Compile Include="ProgrammingAssignment1.cs" />
+    <Compile Include="ProgrammingAssignment1.Platypus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

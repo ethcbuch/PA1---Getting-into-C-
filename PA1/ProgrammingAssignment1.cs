@@ -8,181 +8,11 @@ using System.Collections.Generic;
 
 namespace PA1
 {
-    class ProgrammingAssignment1
+    partial class ProgrammingAssignment1
     {
-        abstract class Animal
-        {
-            protected string animalName;
-            protected int animalAge;
-            protected string animalNoise;
-            protected int animalWeight;
-
-            public Animal()
-            {
-
-            }
-
-            public abstract void printInfo();
-            public abstract void makeNoise();
-            public abstract void ageUp();
-
-            public abstract void ASCIIanimal();
-
-            public void ageIncrement()
-            {
-                animalAge++;
-            }
-            public string getName()
-            {
-                return animalName;
-            }
-
-            public int getAge()
-            {
-                return animalAge;
-            }
-            public string getNoise()
-            {
-                return animalNoise;
-            }
-            public int getWeight()
-            {
-                return animalWeight;
-            }
-
-        }
-
-        class Cat : Animal
-        {
-            private string animalType = "Cat";
-
-            public Cat(string animalName, int animalAge, string animalNoise, int animalWeight)
-            {
-                this.animalAge = animalAge;
-                this.animalName = animalName;
-                this.animalNoise = animalNoise;
-                this.animalWeight = animalWeight;
-            }
-
-            public override void printInfo()
-            {
-                Console.WriteLine("Name: " + getName());
-                Console.WriteLine("Age: " + getAge());
-                Console.WriteLine("Weight: " + getWeight());
-            }
-            public override void makeNoise()
-            {
-                Console.WriteLine("The " + animalType + " makes this noise: " + animalNoise + "!!!!!!");
-            }
-
-            public override void ageUp()
-            {
-                ageIncrement();
-                Console.WriteLine("The " + animalType + " is now " + getAge() + " years old!");
-            }
-
-
-            public override void ASCIIanimal()
-            {
-                Console.WriteLine("          __..--''``---....___   _..._    __");
-                Console.WriteLine("/// //_.-'    .-/;  `        ``<._  ``.''_ `. / / |");
-                Console.WriteLine("///_.-' _..--.'_   )                     `( ) ) // //");
-                Console.WriteLine("/ (_..-' // (< _     ;_..__               ; `' / ///");
-                Console.WriteLine("/ // // //  `-._,_)' // / ``--...____..-' /// / //");
-            }
-        }
-
-        class Cassowary : Animal
-        {
-            private string animalType = "Cassowary";
-
-            public Cassowary(string animalName, int animalAge, string animalNoise, int animalWeight)
-            {
-                this.animalAge = animalAge;
-                this.animalName = animalName;
-                this.animalNoise = animalNoise;
-                this.animalWeight = animalWeight;
-            }
-
-            public override void printInfo()
-            {
-                Console.WriteLine("Name: " + getName());
-                Console.WriteLine("Age: " + getAge());
-                Console.WriteLine("Weight: " + getWeight());
-            }
-            public override void makeNoise()
-            {
-                Console.WriteLine("The " + animalType + " makes this noise: " + animalNoise + "!!!!!!");
-            }
-
-            public override void ageUp()
-            {
-                ageIncrement();
-                Console.WriteLine("The " + animalType + " is now " + getAge() + " years old!");
-            }
-
-
-            public override void ASCIIanimal()
-            {
-                Console.WriteLine("           _");
-                Console.WriteLine("          /_\\");
-                Console.WriteLine("       <=(' )");
-                Console.WriteLine("         (;;");
-                Console.WriteLine("         (//");
-                Console.WriteLine("        (//");
-                Console.WriteLine("         : '.------.");
-                Console.WriteLine("         |    ---_-_)");
-                Console.WriteLine("         `.________,'");
-                Console.WriteLine("         __\\  \\");
-                Console.WriteLine("        (|      \\");
-                Console.WriteLine("                /|");
-            }
-        }
-
-        class Platypus : Animal
-        {
-            private string animalType = "Platypus";
-
-            public Platypus(string animalName, int animalAge, string animalNoise, int animalWeight)
-            {
-                this.animalAge = animalAge;
-                this.animalName = animalName;
-                this.animalNoise = animalNoise;
-                this.animalWeight = animalWeight;
-            }
-
-            public override void printInfo()
-            {
-                Console.WriteLine("Name: " + getName());
-                Console.WriteLine("Age: " + getAge());
-                Console.WriteLine("Weight: " + getWeight());
-            }
-            public override void makeNoise()
-            {
-                Console.WriteLine("The " + animalType + " makes this noise: " + animalNoise + "!!!!!!");
-            }
-
-            public override void ageUp()
-            {
-                ageIncrement();
-                Console.WriteLine("The " + animalType + " is now " + getAge() + " years old!");
-            }
-
-            public override void ASCIIanimal()
-            {
-                Console.WriteLine("             _.- ~~^^^'~- _ __ .,.- ~ ~ ~  ~  -. _");
-                Console.WriteLine("  ________, '       ::.                       _,-  ~ -.");
-                Console.WriteLine("((~_/   -s -  ::                     , '          ;,");
-                Console.WriteLine(" \\       <.._ .;;;`                     ;           }  `'");
-                Console.WriteLine("  ``======='    _ _- _ (   }             `,          ,'(,  `,");
-                Console.WriteLine("               ((/ _ _,i   ! _ ~ - -- - _ _'_-_,_,,,'    (,  ;");
-                Console.WriteLine("                  ((((____/            (,(,(, ____>        (,'");
-            }
-        }
-
         public void menu()
         {
-            List<Animal> zoo = new List<Animal>();
+            List<Animal> world = new List<Animal>();
             char userInput = '0';
             string tempType;
             string tempName;
@@ -214,7 +44,7 @@ namespace PA1
                             {
                                 if (tempType == "Cat" || tempType == "cat" || tempType == "Cassowary" || tempType == "cassowary" || tempType == "Platypus" || tempType == "platypus")
                                 {
-                                    //Sorry I know you dislike breaks but I couldn't get to work without one.
+                                    //Sorry I know you dislike breaks but I couldn't get this to work without one.
                                     break;
                                 }
                                 Console.WriteLine("Please enter a valid type of animal!");
@@ -232,17 +62,17 @@ namespace PA1
 
                             if (tempType == "Cat" || tempType == "cat")
                             {
-                                zoo.Add(new Cat(tempName, Convert.ToInt32(tempAge), tempNoise, Convert.ToInt32(tempWeight)));
+                                world.Add(new Cat(tempName, Convert.ToInt32(tempAge), tempNoise, Convert.ToInt32(tempWeight)));
                             }
 
                             if (tempType == "Cassowary" || tempType == "cassowary")
                             {
-                                zoo.Add(new Cat(tempName, Convert.ToInt32(tempAge), tempNoise, Convert.ToInt32(tempWeight)));
+                                world.Add(new Cassowary(tempName, Convert.ToInt32(tempAge), tempNoise, Convert.ToInt32(tempWeight)));
                             }
 
                             if (tempType == "Platypus" || tempType == "platypus")
                             {
-                                zoo.Add(new Cat(tempName, Convert.ToInt32(tempAge), tempNoise, Convert.ToInt32(tempWeight)));
+                                world.Add(new Platypus(tempName, Convert.ToInt32(tempAge), tempNoise, Convert.ToInt32(tempWeight)));
                             }
 
                             listLength++;
@@ -270,8 +100,8 @@ namespace PA1
                             }
 
 
-                            zoo[listPosition].ASCIIanimal();
-                            zoo[listPosition].printInfo();
+                            world[listPosition].ASCIIanimal();
+                            world[listPosition].printInfo();
                             break;
 
                         }
@@ -290,7 +120,7 @@ namespace PA1
                                 listPosition = Convert.ToInt32(a);
                             }
 
-                            zoo[listPosition].makeNoise();
+                            world[listPosition].makeNoise();
                             break;
                         }
                     case '4':
@@ -313,7 +143,7 @@ namespace PA1
                                 listPosition = Convert.ToInt32(a);
                             }
 
-                            zoo[listPosition].ageUp();
+                            world[listPosition].ageUp();
                             break;
                         }
                     case '5':
