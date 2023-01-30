@@ -28,7 +28,7 @@ namespace PA1
             }
             public override void makeNoise()
             {
-                Console.WriteLine("The " + animalType + " makes this noise: " + animalNoise + "!!!!!!");
+                Console.WriteLine("The " + animalType + " makes this noise: " + getNoise() + "!!!!!!");
             }
 
             public override void ageUp()
